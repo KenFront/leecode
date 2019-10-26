@@ -1,15 +1,17 @@
 {
   "name": "leecode",
   "version": "1.0.0",
-  "description": "",
+  "description": "leecode solution",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "lint": "eslint '**/*.js' --fix"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "leecode"
+  ],
+  "author": "Ken",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.4.0",
