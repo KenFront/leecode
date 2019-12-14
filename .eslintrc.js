@@ -20,5 +20,6 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': ['error'],
+    'jest/no-focused-tests': 'off',
   },
 }

@@ -30,8 +30,26 @@ const addTwoNumbers = (l1, l2) => {
 describe('leecode:2', () => {
   test('case 1', () => {
     const result = addTwoNumbers(
-      { val: 2, next: { val: 4, next: { val: 3, next: null } } },
-      { val: 5, next: { val: 6, next: { val: 4, next: null } } },
+      {
+        val: 2,
+        next: {
+          val: 4,
+          next: {
+            val: 3,
+            next: null,
+          },
+        },
+      },
+      {
+        val: 5,
+        next: {
+          val: 6,
+          next: {
+            val: 4,
+            next: null,
+          },
+        },
+      },
     )
     const computed = new ListNode(7)
     computed.next = new ListNode(0)
@@ -40,8 +58,17 @@ describe('leecode:2', () => {
   })
   test('case 2', () => {
     const result = addTwoNumbers(
-      { val: 1, next: { val: 8, next: null } },
-      { val: 0, next: null },
+      {
+        val: 1,
+        next: {
+          val: 8,
+          next: null,
+        },
+      },
+      {
+        val: 0,
+        next: null,
+      },
     )
     const computed = new ListNode(1)
     computed.next = new ListNode(8)

@@ -1,3 +1,7 @@
-require('./problemList/1')
-require('./problemList/2')
-require('./problemList/79')
+// require('./problemList/1')
+// require('./problemList/2')
+// require('./problemList/79')
+
+// rxjs
+
+require('./problemList/rx/1.js')

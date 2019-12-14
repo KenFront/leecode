@@ -6,7 +6,10 @@ const exist = (board, word) => {
     (result, rows, x) => {
       rows.forEach((el, y) => {
         if (el === word[0]) {
-          result[0].push({ x, y })
+          result[0].push({
+            x,
+            y,
+          })
         }
       })
       return result
@@ -83,7 +86,11 @@ const exist = (board, word) => {
   return resultList.length === word.length
 }
 
-const board = [['A', 'B', 'C', 'E'], ['S', 'F', 'C', 'S'], ['A', 'D', 'E', 'E']]
+const board = [
+  ['A', 'B', 'C', 'E'],
+  ['S', 'F', 'C', 'S'],
+  ['A', 'D', 'E', 'E'],
+]
 
 describe('leecode:79', () => {
   test('case 1', () => {
