@@ -3,22 +3,22 @@ const { pipe } = require('rxjs/internal/util/pipe')
 const { switchMap } = require('rxjs/internal/operators/switchMap')
 const { findIndex } = require('rxjs/internal/operators/findIndex')
 const { filter } = require('rxjs/internal/operators/filter')
-const { distinct } = require('rxjs/internal/operators/distinct')
-const { take } = require('rxjs/internal/operators/take')
+const { map } = require('rxjs/internal/operators/map')
 
 const twoSum = (nums, target) => {
   const result = []
-  const findMatchedIndex = (x) =>
-    findIndex((y) => {
-      return x + y === target
-    })
-  const isExistIndex = filter((val) => ~val)
-  const firstTwo = take(2)
-  const findPairs = pipe(switchMap((x) => from(nums).pipe(findMatchedIndex(x))))
+  const findMatchedIndex = (x) => findIndex((y) => x + y === target)
+  const getMatchPosision = (i) => map((y) => [i, y])
+  const isExistIndex = filter((val) => ~val[0] && ~val[1])
+  const findPostionByNums = switchMap((x, i) =>
+    from(nums).pipe(findMatchedIndex(x), getMatchPosision(i), isExistIndex),
+  )
+  const findPairs = pipe(findPostionByNums)
 
-  const stream = from(nums).pipe(findPairs, distinct(), isExistIndex, firstTwo)
-  stream.subscribe((val) => {
-    result.push(val)
+  const stream = from(nums).pipe(findPairs)
+  const sub = stream.subscribe((val) => {
+    result.push(...val)
+    sub.unsubscribe()
   })
   return result.sort()
 }
@@ -43,8 +43,8 @@ describe('leecode(rx):1', () => {
   })
   test('case 4', () => {
     const nums = [3, 3, 5, 8, 9, 5]
-    const target = 7
+    const target = 8
     const result = twoSum(nums, target)
-    expect(result).toEqual([])
+    expect(result).toEqual([0, 2])
   })
 })
