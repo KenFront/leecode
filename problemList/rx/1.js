@@ -9,9 +9,9 @@ const twoSum = (nums, target) => {
   const result = []
   const findMatchedIndex = (x) => findIndex((y) => x + y === target)
   const getMatchPosision = (i) => map((y) => [i, y])
-  const isExistIndex = filter((val) => ~val[0] && ~val[1])
+  const isExistIndex = filter((val) => ~val)
   const findPostionByNums = switchMap((x, i) =>
-    from(nums).pipe(findMatchedIndex(x), getMatchPosision(i), isExistIndex),
+    from(nums).pipe(findMatchedIndex(x), isExistIndex, getMatchPosision(i)),
   )
   const findPairs = pipe(findPostionByNums)
 
@@ -20,7 +20,7 @@ const twoSum = (nums, target) => {
     result.push(...val)
     sub.unsubscribe()
   })
-  return result.sort()
+  return result
 }
 describe('leecode(rx):1', () => {
   test('case 1', () => {
