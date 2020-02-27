@@ -16,9 +16,9 @@ const twoSum = (nums, target) => {
 
 describe('leecode:1', () => {
   test('case 1', () => {
-    const nums = [2, 7, 11, 15]
-    const target = 9
-    const result = twoSum(nums, target)
-    expect(result).toEqual([0, 1])
+    const input = [[2, 7, 11, 15], 9]
+    const output = [0, 1]
+    const result = twoSum(...input)
+    expect(result).toEqual(output)
   })
 })

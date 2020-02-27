@@ -29,7 +29,7 @@ const addTwoNumbers = (l1, l2) => {
 
 describe('leecode:2', () => {
   test('case 1', () => {
-    const result = addTwoNumbers(
+    const input = [
       {
         val: 2,
         next: {
@@ -50,14 +50,15 @@ describe('leecode:2', () => {
           },
         },
       },
-    )
-    const computed = new ListNode(7)
-    computed.next = new ListNode(0)
-    computed.next.next = new ListNode(8)
-    expect(result).toEqual(computed)
+    ]
+    const output = new ListNode(7)
+    output.next = new ListNode(0)
+    output.next.next = new ListNode(8)
+    const result = addTwoNumbers(...input)
+    expect(result).toEqual(output)
   })
   test('case 2', () => {
-    const result = addTwoNumbers(
+    const input = [
       {
         val: 1,
         next: {
@@ -69,9 +70,10 @@ describe('leecode:2', () => {
         val: 0,
         next: null,
       },
-    )
-    const computed = new ListNode(1)
-    computed.next = new ListNode(8)
-    expect(result).toEqual(computed)
+    ]
+    const output = new ListNode(1)
+    output.next = new ListNode(8)
+    const result = addTwoNumbers(...input)
+    expect(result).toEqual(output)
   })
 })
