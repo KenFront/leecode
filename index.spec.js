@@ -6,6 +6,7 @@ require('./problemList/5')
 require('./problemList/7')
 require('./problemList/10')
 require('./problemList/11')
+require('./problemList/15')
 require('./problemList/79')
 
 // rxjs
