@@ -1,7 +1,5 @@
-const ListNode = function(val) {
-  this.val = val
-  this.next = null
-}
+const ListNode = require('./utils/ListNode')
+
 const addTwoNumbers = require('./2')
 
 describe('leecode:2', () => {

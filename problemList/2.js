@@ -1,7 +1,5 @@
-const ListNode = function(val) {
-  this.val = val
-  this.next = null
-}
+const ListNode = require('./utils/ListNode')
+
 const addTwoNumbers = (l1, l2) => {
   const result = new ListNode(0)
   let temp = result
