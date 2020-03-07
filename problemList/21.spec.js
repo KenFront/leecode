@@ -2,7 +2,7 @@ const ListNode = require('./utils/ListNode')
 
 const mergeTwoLists = require('./21')
 
-describe('leecode:19', () => {
+describe('leecode:21', () => {
   test('case 1', () => {
     const nodes1 = [1, 2, 4].map((val) => new ListNode(val))
     const nodes2 = [1, 3, 4].map((val) => new ListNode(val))
