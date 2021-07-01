@@ -4,13 +4,7 @@ module.exports = {
     es6: true,
     node: true,
   },
-  extends: [
-    'standard',
-    'plugin:jest/recommended',
-    'prettier',
-    'prettier/babel',
-    'prettier/standard',
-  ],
+  extends: ['standard', 'plugin:jest/recommended', 'prettier'],
   plugins: ['jest', 'prettier'],
   globals: {
     'jest/globals': true,
@@ -21,5 +15,6 @@ module.exports = {
   rules: {
     'prettier/prettier': ['error'],
     'jest/no-focused-tests': 'off',
+    'default-case-last': 'off',
   },
 }
