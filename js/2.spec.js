@@ -1,4 +1,4 @@
-const ListNode = require('./utils/ListNode')
+const ListNode = require('./ListNode')
 
 const addTwoNumbers = require('./2')
 

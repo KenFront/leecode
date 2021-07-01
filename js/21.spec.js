@@ -1,4 +1,4 @@
-const ListNode = require('./utils/ListNode')
+const ListNode = require('./ListNode')
 
 const mergeTwoLists = require('./21')
 

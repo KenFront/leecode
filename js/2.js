@@ -1,4 +1,4 @@
-const ListNode = require('./utils/ListNode')
+const ListNode = require('./ListNode')
 
 const addTwoNumbers = (l1, l2) => {
   const result = new ListNode(0)

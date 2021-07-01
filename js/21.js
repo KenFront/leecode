@@ -1,4 +1,4 @@
-const ListNode = require('./utils/ListNode')
+const ListNode = require('./ListNode')
 
 const mergeTwoLists = (l1, l2) => {
   const start = new ListNode(0)

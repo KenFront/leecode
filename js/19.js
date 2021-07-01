@@ -1,4 +1,4 @@
-const ListNode = require('./utils/ListNode')
+const ListNode = require('./ListNode')
 
 const removeNthFromEnd = (head, n) => {
   let total = 0
