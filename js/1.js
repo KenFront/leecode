@@ -2,12 +2,12 @@ const twoSum = (nums, target) => {
   const result = []
   nums.some((num, i) => {
     const matched = target - num
-    const matchedIndex = nums.findIndex(
-      (item, index) => item === matched && index !== i,
-    )
+    const matchedIndex = nums
+      .slice(i)
+      .findIndex((item, index) => item === matched && index + i !== i)
     if (matchedIndex > -1) {
       result.push(i)
-      result.push(matchedIndex)
+      result.push(matchedIndex + i)
     }
     return result.length
   })
