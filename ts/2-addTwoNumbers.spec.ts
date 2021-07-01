@@ -1,0 +1,12 @@
+import { addTwoNumbers } from './2-addTwoNumbers'
+import { ListNode } from './ListNode'
+
+describe('2-addTwoNumbers', () => {
+  test('case 1', () => {
+    const l1 = new ListNode(2, new ListNode(4, new ListNode(3)))
+    const l2 = new ListNode(5, new ListNode(6, new ListNode(4)))
+    const output = new ListNode(7, new ListNode(0, new ListNode(8)))
+    const result = addTwoNumbers(l1, l2)
+    expect(result).toEqual(output)
+  })
+})

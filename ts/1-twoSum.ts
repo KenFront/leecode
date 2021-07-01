@@ -1,6 +1,8 @@
-const twoSum = (nums, target) => {
-  const hash = {}
-  const result = []
+const twoSum = (nums: number[], target: number): number[] => {
+  const hash: {
+    [key: number]: number
+  } = {}
+  const result: number[] = []
   nums.some((v, i) => {
     const value = hash[target - nums[i]]
     if (value > -1) {
@@ -14,4 +16,4 @@ const twoSum = (nums, target) => {
   return result
 }
 
-module.exports = twoSum
+export { twoSum }
