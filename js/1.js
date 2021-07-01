@@ -1,15 +1,15 @@
 const twoSum = (nums, target) => {
+  const hash = {}
   const result = []
-  nums.some((num, i) => {
-    const matched = target - num
-    const matchedIndex = nums
-      .slice(i)
-      .findIndex((item, index) => item === matched && index + i !== i)
-    if (matchedIndex > -1) {
+  nums.some((v, i) => {
+    const value = hash[target - nums[i]]
+    if (value > -1) {
       result.push(i)
-      result.push(matchedIndex + i)
+      result.push(value)
+    } else {
+      hash[v] = i
     }
-    return result.length
+    return result.length !== 0
   })
   return result
 }
