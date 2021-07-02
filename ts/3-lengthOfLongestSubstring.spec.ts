@@ -1,4 +1,4 @@
-const lengthOfLongestSubstring = require('./3')
+import { lengthOfLongestSubstring } from './3-lengthOfLongestSubstring'
 
 describe('leecode:3', () => {
   test('case 1', () => {
